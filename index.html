@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../Ramen_Timer/img/pick_button.png" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet" />
+    <title>カップラーメンタイマー</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div v-show="!show">
+        <div class="main_img"></div>
+        <button @click="show = !show" class="left_timer">3分</button>
+        <button @click="show = !show" class="right_timer">5分</button><br />
+      </div>
+
+      <transition>
+        <div v-show="show">
+          <div class="column">
+            <p>{{ minutes | zeroPad }} : {{ seconds | zeroPad }}</p>
+            <button class="startButton" @click="startTimer" :disabled="isRunning">START</button>
+          </div>
+          <br />
+          <a v-on:click="reload" class="button">BACK</a>
+        </div>
+      </transition>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

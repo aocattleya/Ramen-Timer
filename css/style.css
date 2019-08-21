@@ -1,0 +1,139 @@
+#app {
+  text-align: center;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.right_timer {
+  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 40px;
+  border: none;
+  color: #fff;
+  background: #3bd6e4;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: 0.3s;
+  padding: 50px 134px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.right_timer:hover {
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.main_img {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 30%;
+  height: 450px;
+  background: url("../img/pick_button.png");
+  background-size: cover;
+  animation: anime1 0.4s linear 2;
+}
+@keyframes anime1 {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.main_img_a {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 30%;
+  height: 450px;
+  background: url("../img/pick_button\ -\ コピー.png");
+  background-size: cover;
+  animation: anime2 0.4s linear 2;
+}
+@keyframes anime2 {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.left_timer {
+  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 40px;
+  border: none;
+  color: #fff;
+  background: #3bd6e4;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: 0.3s;
+  padding: 50px 134px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.left_timer:hover {
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.box {
+  background: #eee;
+  padding: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* アニメーション中のスタイル */
+.v-leave-active,
+.v-enter-active {
+  transition: opacity 1s;
+}
+
+.v-enter,
+.v-leave-to {
+  transition: 1s;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.2em 2.5em;
+  border: 2px solid #333;
+  border-radius: 0.4em 2em 0.5em 3em/3em 0.5em 2em 0.5em;
+  color: #333;
+  font-family: "Covered By Your Grace", cursive;
+  font-weight: 400;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  transition: 1s;
+  box-shadow: none;
+}
+
+/* .roll {
+  border-radius: 50%;
+  position: absolute;
+} */
+
+.right_timer:hover + .roll {
+  animation: rollkAnime 0.7s linear infinite;
+}
+@keyframes rollkAnime {
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
