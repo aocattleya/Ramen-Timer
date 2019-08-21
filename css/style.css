@@ -4,28 +4,43 @@
   margin: 0 auto;
 }
 
+body {
+  background-image: url(../img/back.png);
+  padding-bottom: 50px;
+}
+
 .right_timer {
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  margin-top: 40px;
+  /* font-size: 50px; */
+  /* font-weight: bold; */
+  margin-top: 15px;
   border: none;
   color: #fff;
-  background: #3bd6e4;
-  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  /* background: #3bd6e4; */
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
   opacity: 1;
   transition: 0.3s;
-  padding: 50px 134px;
+  /* padding: 50px 134px; */
   cursor: pointer;
   outline: none;
   border-radius: 5px;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: black;
 }
 
 .right_timer:hover {
   box-shadow: none;
-  opacity: 0.8;
+  opacity: 0.7;
+  animation: anime5 0.4s linear 1;
+}
+@keyframes anime5 {
+  100% {
+    transform: rotate( -360deg );
+  }
 }
 
 .main_img {
@@ -36,6 +51,7 @@
   background: url("../img/pick_button.png");
   background-size: cover;
   animation: anime1 0.4s linear 2;
+  border: 5px solid rgb(119, 0, 0);
 }
 @keyframes anime1 {
   100% {
@@ -51,6 +67,7 @@
   background: url("../img/pick_button\ -\ コピー.png");
   background-size: cover;
   animation: anime2 0.4s linear 2;
+  border: 5px solid rgb(119, 0, 0);   
 }
 @keyframes anime2 {
   100% {
@@ -60,27 +77,36 @@
 
 .left_timer {
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  margin-top: 40px;
+  /* font-size: 50px; */
+  /* font-weight: bold; */
+  margin-top: 15px;
   border: none;
   color: #fff;
-  background: #3bd6e4;
-  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+  /* background: #3bd6e4; */
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
   opacity: 1;
   transition: 0.3s;
-  padding: 50px 134px;
+  /* padding: 50px 134px; */
   cursor: pointer;
   outline: none;
   border-radius: 5px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: black;
 }
 
 .left_timer:hover {
   box-shadow: none;
-  opacity: 0.8;
+  opacity: 0.7;
+  animation: anime4 0.4s linear 1;
+}
+@keyframes anime4 {
+  100% {
+    transform: rotate( -360deg );
+  }
 }
 
 .box {
@@ -136,4 +162,8 @@
   100% {
     transform: rotateY(360deg);
   }
+}
+
+.none{
+  padding: 40px;
 }
