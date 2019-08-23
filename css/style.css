@@ -7,6 +7,51 @@
 body {
   background-image: url(../img/back.png);
   padding-bottom: 50px;
+  text-align: center;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s, transform 0.7s;
+}
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.right_face {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  animation: anime1 0.4s linear 2;
+  border: 5px solid rgb(100, 100, 100);
+  background-image: url(../img/button_right.png);
+  background-size: cover;
+}
+@keyframes anime1 {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.left_face {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  animation: anime2 0.4s linear 2;
+  border: 5px solid rgb(100, 100, 100);
+  background-image: url(../img/button_left.png);
+  background-size: cover;
+}
+@keyframes anime2 {
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 .right_timer {
@@ -22,8 +67,6 @@ body {
   display: inline-block;
   margin-right: 10px;
   border-radius: 50%;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: black;
 }
 
 .right_timer:hover {
@@ -32,38 +75,11 @@ body {
 }
 @keyframes anime5 {
   100% {
-    transform: rotate( -360deg );
-  }
-}
-
-.right_face {
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  animation: anime1 0.4s linear 2;
-  border: 5px solid rgb(119, 0, 0);
-}
-@keyframes anime1 {
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.left_face {
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  animation: anime2 0.4s linear 2;
-  border: 5px solid rgb(119, 0, 0);   
-}
-@keyframes anime2 {
-  100% {
-    transform: rotateY(360deg);
+    transform: rotate(-360deg);
   }
 }
 
 .left_timer {
-  /* display: block; */
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 15px;
   border: none;
@@ -76,8 +92,6 @@ body {
   display: inline-block;
   margin-right: 10px;
   border-radius: 50%;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
 }
 
 .left_timer:hover {
@@ -86,16 +100,8 @@ body {
 }
 @keyframes anime4 {
   100% {
-    transform: rotate( -360deg );
+    transform: rotate(-360deg);
   }
-}
-
-.box {
-  background: #eee;
-  padding: 100px;
-  width: 100px;
-  text-align: center;
-  margin: 0 auto;
 }
 
 .button {
@@ -116,23 +122,25 @@ body {
 .button:hover {
   transition: 0.7s;
   box-shadow: none;
+  text-decoration: none;
 }
 
-.right_timer:hover + .roll {
-  animation: rollkAnime 0.7s linear infinite;
-}
-@keyframes rollkAnime {
-  50% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.start_stop{
-}
-
-.none{
+.none {
   padding: 40px;
+}
+
+.timer {
+  font-size: 40px;
+  width: 80%;
+  border: 1px solid #ccc;
+  margin: 240px auto 10px auto;
+  padding: 40px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  width: 80%;
 }

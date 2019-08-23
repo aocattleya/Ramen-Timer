@@ -4,9 +4,12 @@ const vm = new Vue({
     show: false,
     isLeft: false,
     isRight: true,
+
+    formatTime: null, //ok?
     timerOn: false,
     timerObj: null,
-    sec: 0
+    min: 59,
+    sec: 59
   },
   methods: {
     reload: function(event) {
@@ -20,19 +23,23 @@ const vm = new Vue({
       this.isLeft = false;
       this.isRight = true;
     },
+
     count: function() {
-      this.sec -= 1;
-      if (this.sec <= 0) {
+      if (this.sec <= 0 && this.min >= 1) {
+        this.min--;
+        this.sec = 59;
+      } else if (this.sec <= 0 && this.min <= 0) {
         this.complete();
+      } else {
+        this.sec--;
       }
     },
     start: function() {
       let self = this;
-      this.sec = 10;
       this.timerObj = setInterval(function() {
         self.count();
       }, 1000);
-      this.timerOn = true;
+      this.timerOn = true; //timerがOFFであることを状態として保持
     },
     stop: function() {
       clearInterval(this.timerObj);
@@ -40,8 +47,21 @@ const vm = new Vue({
     },
     complete: function() {
       clearInterval(this.timerObj);
-      this.timerOn = false;
-      this.sec = "complete";
+    },
+
+    computed: {
+      formatTime: function() {
+        let timeStrings = [this.min.toString(), this.sec.toString()].map(
+          function(str) {
+            if (str.length < 2) {
+              return "0" + str;
+            } else {
+              return str;
+            }
+          }
+        );
+        return timeStrings[0] + ":" + timeStrings[1];
+      }
     }
   }
 });
