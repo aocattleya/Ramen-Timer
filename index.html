@@ -6,25 +6,42 @@
     <link rel="icon" type="image/png" href="../Ramen_Timer/img/button_right.png" />
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet" />
     <title>カップラーメンタイマー</title>
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <div id="app">
       <div v-show="!show">
-        <img id='pick' src='../Ramen_Timer/img/button_right.png' v-bind:class='{ right_face: isRight, left_face: isLeft }' width="400" height="400"></img>
-        <input type="image" src="..//Ramen_Timer/img/3.png" @click="show = !show" v-on:mouseover='rotate_left' class="left_timer" width="200" height="200"></button>
+        <img id="pick" v-bind:class="{ right_face: isRight, left_face: isLeft }" width="400" height="400" />
+        <input type="image" src="..//Ramen_Timer/img/3.png" width="200" height="200" class="left_timer"
+        @click="show = !show" v-on:mouseover="rotate_left" />
+
         <span class="none"></span>
-        <input type="image" src="..//Ramen_Timer/img/5.png" @click="show = !show" v-on:mouseover='rotate_right' class="right_timer" width="200" height="200"></button>
+
+        <input type="image" src="..//Ramen_Timer/img/5.png" class="right_timer" width="200" height="200"
+        @click="show = !show" v-on:mouseover="rotate_right" />
       </div>
 
-      <div v-show="show">
-          <div>{{ sec }}</div>
-          <button v-on:click='start' v-if='!timerOn' class="start_stop">START</button>
-          <button v-on:click='stop' v-if='timerOn'>STOP</button>
-        <br /><br>
-        <a v-on:click="reload" class="button">BACK</a>
-      </div>
+      <transition appear>
+        <div v-show="show">
+          <div class="timer">{{ formatTime }}</div>
+          <button v-on:click="start" v-if="!timerOn" class="btn btn-lg btn-primary">START</button>
+          <button v-on:click="stop" v-if="timerOn" class="btn btn-lg btn-danger">STOP</button>
+          <br /><br />
+          <a v-on:click="reload" class="button">BACK</a>
+        </div>
+      </transition>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
