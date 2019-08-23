@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../Ramen_Timer/img/button_right.png" />
+    <link rel="icon" type="image/png" href="../Ramen_Timer/img/kurin.png" />
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet" />
     <title>カップラーメンタイマー</title>
     <link rel="stylesheet"
@@ -26,21 +26,53 @@
         <img id="pick" v-bind:class="{ right_face: isRight, left_face: isLeft }" width="400" height="400" />
         <input type="image" src="..//Ramen_Timer/img/3.png" width="200" height="200" class="left_timer"
         @click="show = !show" v-on:mouseover="rotate_left" />
-
         <span class="none"></span>
-
         <input type="image" src="..//Ramen_Timer/img/5.png" class="right_timer" width="200" height="200"
         @click="show = !show" v-on:mouseover="rotate_right" />
+
       </div>
 
       <transition appear>
-        <div v-show="show">
+        <!-- <div v-show="show">
           <div class="timer">{{ formatTime }}</div>
           <button v-on:click="start" v-if="!timerOn" class="btn btn-lg btn-primary">START</button>
           <button v-on:click="stop" v-if="timerOn" class="btn btn-lg btn-danger">STOP</button>
           <br /><br />
           <a v-on:click="reload" class="button">BACK</a>
+        </div> -->
+
+        <div v-show="show">
+        <section id="app" class="hero is-info is-fullheight is-bold">
+          <div class="hero-body">
+            <div class="container has-text-centered">    
+              <div id="timer">
+                <span id="minutes">{{ minutes }}</span>
+                <span id="middle">:</span>
+                <span id="seconds">{{ seconds }}</span>
+              </div>
+    
+              <div id="buttons">
+                <!--     Start TImer -->
+                <button id="start" class="button is-dark is-large"
+                  v-if="!timer" @click="startTimer">
+                  <i class="far fa-play-circle"></i>
+                </button>
+                <!--     Pause Timer -->
+                <button id="stop" class="button is-dark is-large"
+                  v-if="timer" @click="stopTimer">
+                  <i class="far fa-pause-circle"></i>
+                </button>
+                <!--     Restart Timer -->
+                <button id="reset" class="button is-dark is-large"
+                  v-if="resetButton" @click="resetTimer">
+                  <i class="fas fa-undo"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+        </section>
+
       </transition>
     </div>
 

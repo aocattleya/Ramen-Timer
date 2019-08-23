@@ -5,11 +5,9 @@ const vm = new Vue({
     isLeft: false,
     isRight: true,
 
-    formatTime: null, //ok?
-    timerOn: false,
-    timerObj: null,
-    min: 59,
-    sec: 59
+    timer: null,
+    totalTime: 25 * 60,
+    resetButton: false,
   },
   methods: {
     reload: function(event) {
@@ -24,44 +22,42 @@ const vm = new Vue({
       this.isRight = true;
     },
 
-    count: function() {
-      if (this.sec <= 0 && this.min >= 1) {
-        this.min--;
-        this.sec = 59;
-      } else if (this.sec <= 0 && this.min <= 0) {
-        this.complete();
+    startTimer: function() {
+      this.timer = setInterval(() => this.countdown(), 1000);
+      this.resetButton = true;
+    },
+    stopTimer: function() {
+      clearInterval(this.timer);
+      this.timer = null;
+      this.resetButton = true;
+    },
+    resetTimer: function() {
+      this.totalTime = 25 * 60;
+      clearInterval(this.timer);
+      this.timer = null;
+      this.resetButton = false;
+    },
+    padTime: function(time) {
+      return (time < 10 ? "0" : "") + time;
+    },
+    countdown: function() {
+      if (this.totalTime >= 1) {
+        this.totalTime--;
       } else {
-        this.sec--;
+        this.totalTime = 0;
+        this.resetTimer();
       }
+    }
+  },
+  // ========================
+  computed: {
+    minutes: function() {
+      const minutes = Math.floor(this.totalTime / 60);
+      return this.padTime(minutes);
     },
-    start: function() {
-      let self = this;
-      this.timerObj = setInterval(function() {
-        self.count();
-      }, 1000);
-      this.timerOn = true; //timerがOFFであることを状態として保持
-    },
-    stop: function() {
-      clearInterval(this.timerObj);
-      this.timerOn = false;
-    },
-    complete: function() {
-      clearInterval(this.timerObj);
-    },
-
-    computed: {
-      formatTime: function() {
-        let timeStrings = [this.min.toString(), this.sec.toString()].map(
-          function(str) {
-            if (str.length < 2) {
-              return "0" + str;
-            } else {
-              return str;
-            }
-          }
-        );
-        return timeStrings[0] + ":" + timeStrings[1];
-      }
+    seconds: function() {
+      const seconds = this.totalTime - this.minutes * 60;
+      return this.padTime(seconds);
     }
   }
 });
