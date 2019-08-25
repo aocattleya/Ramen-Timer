@@ -1,9 +1,3 @@
-#app {
-  text-align: center;
-  padding-top: 20px;
-  margin: 0 auto;
-}
-
 body {
   background-image: url(../img/back.png);
   padding-bottom: 50px;
@@ -12,12 +6,12 @@ body {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s, transform 0.7s;
+  transition: opacity 0.8s, transform 0.7s;
 }
 .v-enter,
 .v-leave-to {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
 }
 
 [v-cloak] {
@@ -26,12 +20,13 @@ body {
 
 .right_face {
   display: block;
-  margin: 0 auto;
+  padding: 200px;
+  margin: 50px auto 10px;
   border-radius: 50%;
-  animation: anime1 0.4s linear 2;
   border: 5px solid rgb(100, 100, 100);
   background-image: url(../img/button_right.png);
   background-size: cover;
+  animation: anime1 0.4s linear 2;
 }
 @keyframes anime1 {
   100% {
@@ -41,12 +36,13 @@ body {
 
 .left_face {
   display: block;
-  margin: 0 auto;
+  padding: 200px;
+  margin: 50px auto 10px;
   border-radius: 50%;
-  animation: anime2 0.4s linear 2;
   border: 5px solid rgb(100, 100, 100);
   background-image: url(../img/button_left.png);
   background-size: cover;
+  animation: anime2 0.4s linear 2;
 }
 @keyframes anime2 {
   100% {
@@ -54,9 +50,11 @@ body {
   }
 }
 
+.pick-button {
+  margin: auto;
+}
+
 .right_timer {
-  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 15px;
   border: none;
   color: #fff;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
@@ -65,23 +63,21 @@ body {
   outline: none;
   border-radius: 5px;
   display: inline-block;
-  margin-right: 10px;
   border-radius: 50%;
+  width: 200px;
 }
 
 .right_timer:hover {
   box-shadow: none;
-  animation: anime5 0.4s linear 1;
+  animation: anime3 0.4s linear 1;
 }
-@keyframes anime5 {
+@keyframes anime3 {
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 
 .left_timer {
-  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 15px;
   border: none;
   color: #fff;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
@@ -90,8 +86,9 @@ body {
   outline: none;
   border-radius: 5px;
   display: inline-block;
-  margin-right: 10px;
   border-radius: 50%;
+  margin-right: 40px;
+  width: 200px;
 }
 
 .left_timer:hover {
@@ -100,47 +97,104 @@ body {
 }
 @keyframes anime4 {
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 
-.button {
-  display: inline-block;
-  padding: 0.2em 2.5em;
-  border: 2px solid #333;
-  border-radius: 0.4em 2em 0.5em 3em/3em 0.5em 2em 0.5em;
-  color: #333;
-  font-family: "Covered By Your Grace", cursive;
-  font-weight: 400;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
-  background-color: rgb(255, 255, 255);
-}
-
-.button:hover {
-  transition: 0.7s;
-  box-shadow: none;
-  text-decoration: none;
-}
-
-.none {
-  padding: 40px;
-}
-
 .timer {
-  font-size: 40px;
-  width: 80%;
-  border: 1px solid #ccc;
-  margin: 240px auto 10px auto;
-  padding: 40px;
+  display: inline-block;
+  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 80px;
+  color: white;
   background-color: #000;
-  color: #fff;
-  border-radius: 3px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 220px auto 35px auto;
+  padding: 10px;
+  width: 85%;
 }
 
-.btn {
-  width: 80%;
+.start-button {
+  width: 90px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
+  transition: 0.5s;
+}
+
+.start-button:hover {
+  box-shadow: none;
+}
+
+.stop-button {
+  width: 90px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
+  transition: 0.5s;
+}
+
+.stop-button:hover {
+  box-shadow: none;
+}
+
+.reset-button {
+  width: 90px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
+  margin-left: 30px;
+  transition: 0.5s;
+}
+
+.reset-button:hover {
+  box-shadow: none;
+}
+
+.back-button {
+  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  margin-top: 25px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: #fff;
+  border: 2px solid #1b1b1b;
+  display: inline-block;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+.back-button:hover {
+  background: #1b1b1b;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 540px) {
+  .timer {
+    font-size: 50px;
+  }
+  .right_face {
+    padding: 150px;
+  }
+  .left_face {
+    padding: 150px;
+  }
+  .right_timer {
+    width: 140px;
+  }
+  .left_timer {
+    width: 140px;
+  }
 }
