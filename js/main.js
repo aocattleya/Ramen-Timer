@@ -4,15 +4,11 @@ const vm = new Vue({
     show: false,
     isLeft: false,
     isRight: true,
-
     timer: null,
-    totalTime: 25 * 60,
-    resetButton: false,
+    totalTime: 5 * 60,
+    resetButton: false
   },
   methods: {
-    reload: function(event) {
-      window.location.reload();
-    },
     rotate_left: function() {
       this.isLeft = true;
       this.isRight = false;
@@ -21,7 +17,10 @@ const vm = new Vue({
       this.isLeft = false;
       this.isRight = true;
     },
-
+    reload: function(event) {
+      window.location.reload();
+    },
+    // timer
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
@@ -32,7 +31,7 @@ const vm = new Vue({
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = 25 * 60;
+      this.totalTime = 5 * 60;
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;
@@ -49,7 +48,6 @@ const vm = new Vue({
       }
     }
   },
-  // ========================
   computed: {
     minutes: function() {
       const minutes = Math.floor(this.totalTime / 60);
