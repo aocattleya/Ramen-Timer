@@ -5,6 +5,7 @@ const vm = new Vue({
     isLeft: false,
     isRight: true,
     timer: null,
+    pickTime: null,
     totalTime: null,
     resetButton: false
   },
@@ -21,10 +22,12 @@ const vm = new Vue({
       window.location.reload();
     },
     treeMin: function() {
-      this.totalTime = 3 * 60;
+      this.pickTime = 3 * 60;
+      this.totalTime = this.pickTime;
     },
     fiveMin: function() {
-      this.totalTime = 5 * 60;
+      this.pickTime = 5 * 60;
+      this.totalTime = this.pickTime;
     },
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
@@ -36,7 +39,7 @@ const vm = new Vue({
       this.resetButton = true;
     },
     resetTimer: function() {
-      this.totalTime = 5 * 60;
+      this.totalTime = this.pickTime;
       clearInterval(this.timer);
       this.timer = null;
       this.resetButton = false;
