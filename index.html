@@ -18,11 +18,11 @@
         <div class="pick-button">
           <input
             type="image" class="left_timer" src="..//Ramen_Timer/img/3min.png"
-            @click="show = !show" v-on:mouseover="rotate_left"
+            @click="show = !show; treeMin()" v-on:mouseover="rotate_left"
           />
           <input
             type="image" class="right_timer" src="..//Ramen_Timer/img/5min.png"
-            @click="show = !show" v-on:mouseover="rotate_right"
+            @click="show = !show; fiveMin()" v-on:mouseover="rotate_right"
           />
         </div>
       </div>
