@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../Ramen_Timer/img/kurin.png" />
+    <link rel="icon" type="image/png" href="img/kurin.png" />
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet" />
     <title>RamenTimer</title>
     <link rel="stylesheet" href="css/style.css" />
@@ -17,11 +17,11 @@
         <!-- Pick TimeButton -->
         <div class="pick-button">
           <input
-            type="image" class="left_timer" src="..//Ramen_Timer/img/3min.png"
+            type="image" class="left_timer" src="img/3min.png"
             @click="show = !show; treeMin()" v-on:mouseover="rotate_left"
           />
           <input
-            type="image" class="right_timer" src="..//Ramen_Timer/img/5min.png"
+            type="image" class="right_timer" src="img/5min.png"
             @click="show = !show; fiveMin()" v-on:mouseover="rotate_right"
           />
         </div>
@@ -38,17 +38,17 @@
           <div id="buttons">
             <!-- Start Button -->
             <input
-              type="image" src="../Ramen_Timer/img/start.png"
+              type="image" src="img/start.png"
               class="start-button" @click="startTimer" v-if="!timer"
             />
             <!-- Stop Button -->
             <input
-              type="image" src="../Ramen_Timer/img/stop.png"
+              type="image" src="img/stop.png"
               class="stop-button" @click="stopTimer" v-if="timer"
             />
             <!-- Reset Button -->
             <input
-              type="image" src="../Ramen_Timer/img/reset.png"
+              type="image" src="img/reset.png"
               class="reset-button" @click="resetTimer" v-if="resetButton"
             />
           </div>
