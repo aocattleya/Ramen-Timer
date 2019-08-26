@@ -8,6 +8,7 @@ body {
 .v-leave-active {
   transition: opacity 0.8s, transform 0.7s;
 }
+
 .v-enter,
 .v-leave-to {
   opacity: 0;
@@ -20,12 +21,12 @@ body {
 
 .right_face {
   display: block;
+  background-size: cover;
+  background-image: url(../img/button_right.png);
   padding: 200px;
   margin: 50px auto 10px;
   border-radius: 50%;
   border: 5px solid rgb(100, 100, 100);
-  background-image: url(../img/button_right.png);
-  background-size: cover;
   animation: anime1 0.4s linear 2;
 }
 @keyframes anime1 {
@@ -36,12 +37,12 @@ body {
 
 .left_face {
   display: block;
+  background-size: cover;
   padding: 200px;
   margin: 50px auto 10px;
   border-radius: 50%;
   border: 5px solid rgb(100, 100, 100);
   background-image: url(../img/button_left.png);
-  background-size: cover;
   animation: anime2 0.4s linear 2;
 }
 @keyframes anime2 {
@@ -55,16 +56,15 @@ body {
 }
 
 .right_timer {
+  display: inline-block;
   border: none;
-  color: #fff;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
-  transition: 0.5s;
   cursor: pointer;
   outline: none;
-  border-radius: 5px;
-  display: inline-block;
-  border-radius: 50%;
+  color: #fff;
   width: 200px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
+  border-radius: 50%;
+  transition: 0.5s;
 }
 
 .right_timer:hover {
@@ -78,17 +78,16 @@ body {
 }
 
 .left_timer {
-  border: none;
-  color: #fff;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
-  transition: 0.5s;
-  cursor: pointer;
-  outline: none;
-  border-radius: 5px;
   display: inline-block;
-  border-radius: 50%;
-  margin-right: 40px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
   width: 200px;
+  margin-right: 40px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
+  border-radius: 50%;
+  transition: 0.5s;
 }
 
 .left_timer:hover {
@@ -104,23 +103,23 @@ body {
 .timer {
   display: inline-block;
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 85px;
   color: white;
   background-color: #000;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  font-size: 85px;
+  width: 85%;
   margin: 220px auto 35px auto;
   padding: 20px;
-  width: 85%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .start-button {
-  width: 90px;
-  border-radius: 50%;
   display: inline-block;
   cursor: pointer;
   outline: none;
+  width: 90px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
+  border-radius: 50%;
   transition: 0.5s;
 }
 
@@ -129,11 +128,11 @@ body {
 }
 
 .stop-button {
-  width: 90px;
-  border-radius: 50%;
   display: inline-block;
   cursor: pointer;
   outline: none;
+  width: 90px;
+  border-radius: 50%;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
   transition: 0.5s;
 }
@@ -143,13 +142,13 @@ body {
 }
 
 .reset-button {
-  width: 90px;
-  border-radius: 50%;
   display: inline-block;
   cursor: pointer;
   outline: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
+  width: 90px;
   margin-left: 30px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
   transition: 0.5s;
 }
 
@@ -158,19 +157,18 @@ body {
 }
 
 .back-button {
-  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
   display: inline-block;
-  position: relative;
-  font-size: 20px;
-  width: 160px;
-  margin-top: 30px;
-  padding: 10px;
+  font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  position: relative;
   text-decoration: none;
   color: #1b1b1b;
   background: #fff;
   border: 2px solid #1b1b1b;
-  display: inline-block;
+  font-size: 20px;
+  width: 160px;
+  margin-top: 30px;
+  padding: 10px;
   border-radius: 5px;
   transition: 0.4s;
 }
