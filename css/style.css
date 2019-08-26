@@ -104,13 +104,13 @@ body {
 .timer {
   display: inline-block;
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 80px;
+  font-size: 85px;
   color: white;
   background-color: #000;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   margin: 220px auto 35px auto;
-  padding: 10px;
+  padding: 20px;
   width: 85%;
 }
 
@@ -161,8 +161,9 @@ body {
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
   display: inline-block;
   position: relative;
+  font-size: 20px;
   width: 160px;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 10px;
   text-align: center;
   text-decoration: none;
