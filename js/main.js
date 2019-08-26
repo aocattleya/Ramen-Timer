@@ -20,11 +20,10 @@ const vm = new Vue({
     reload: function(event) {
       window.location.reload();
     },
-    // timer
-    treeMin:function(){
+    treeMin: function() {
       this.totalTime = 3 * 60;
     },
-    fiveMin:function(){
+    fiveMin: function() {
       this.totalTime = 5 * 60;
     },
     startTimer: function() {
@@ -51,6 +50,7 @@ const vm = new Vue({
       } else {
         this.totalTime = 0;
         this.resetTimer();
+        swal("Complete!!", "", "success");
       }
     }
   },
