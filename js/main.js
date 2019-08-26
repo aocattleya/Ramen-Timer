@@ -5,7 +5,7 @@ const vm = new Vue({
     isLeft: false,
     isRight: true,
     timer: null,
-    totalTime: 5 * 60,
+    totalTime: null,
     resetButton: false
   },
   methods: {
@@ -21,6 +21,12 @@ const vm = new Vue({
       window.location.reload();
     },
     // timer
+    treeMin:function(){
+      this.totalTime = 3 * 60;
+    },
+    fiveMin:function(){
+      this.totalTime = 5 * 60;
+    },
     startTimer: function() {
       this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
@@ -51,7 +57,7 @@ const vm = new Vue({
   computed: {
     minutes: function() {
       const minutes = Math.floor(this.totalTime / 60);
-      return this.padTime(minutes);
+      return minutes;
     },
     seconds: function() {
       const seconds = this.totalTime - this.minutes * 60;
