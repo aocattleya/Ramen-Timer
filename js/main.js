@@ -21,7 +21,7 @@ const vm = new Vue({
     reload: function(event) {
       window.location.reload();
     },
-    treeMin: function() {
+    threeMin: function() {
       this.pickTime = 3 * 60;
       this.totalTime = this.pickTime;
     },
