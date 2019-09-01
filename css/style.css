@@ -185,15 +185,16 @@ body {
     font-size: 50px;
   }
   .right_face {
-    padding: 150px;
+    padding: 140px;
   }
   .left_face {
-    padding: 150px;
+    padding: 140px;
   }
   .right_timer {
-    width: 140px;
+    width: 130px;
   }
   .left_timer {
-    width: 140px;
+    width: 130px;
+    margin-right: 15px;
   }
 }
