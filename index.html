@@ -28,7 +28,7 @@
       </div>
 
       <transition appear>
-        <div v-show="show">
+        <div v-show="show" v-cloak>
           <!-- Timer -->
           <div class="timer">
             <span id="minutes">{{ minutes }}</span>
