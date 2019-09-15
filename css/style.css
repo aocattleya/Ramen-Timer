@@ -61,6 +61,7 @@ body {
   cursor: pointer;
   outline: none;
   color: #fff;
+  background-color: #fff;
   width: 200px;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 3);
   border-radius: 50%;
@@ -82,6 +83,7 @@ body {
   border: none;
   cursor: pointer;
   color: #fff;
+  background-color: #fff;
   outline: none;
   width: 200px;
   margin-right: 40px;
@@ -117,6 +119,7 @@ body {
   display: inline-block;
   cursor: pointer;
   outline: none;
+  background-color: #fff;
   width: 90px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
   border-radius: 50%;
@@ -131,6 +134,7 @@ body {
   display: inline-block;
   cursor: pointer;
   outline: none;
+  background-color: #fff;
   width: 90px;
   border-radius: 50%;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 3);
@@ -145,6 +149,7 @@ body {
   display: inline-block;
   cursor: pointer;
   outline: none;
+  background-color: #fff;
   width: 90px;
   margin-left: 30px;
   border-radius: 50%;

@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <div v-show="!show">
         <!-- Character Icon -->
         <img v-bind:class="{ right_face: isRight, left_face: isLeft }" />
@@ -28,7 +28,7 @@
       </div>
 
       <transition appear>
-        <div v-show="show" v-cloak>
+        <div v-show="show">
           <!-- Timer -->
           <div class="timer">
             <span id="minutes">{{ minutes }}</span>
