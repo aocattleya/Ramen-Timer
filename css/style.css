@@ -4,13 +4,11 @@ body {
   text-align: center;
 }
 
-.v-enter-active,
-.v-leave-active {
+.v-enter-active {
   transition: opacity 0.8s, transform 0.7s;
 }
 
-.v-enter,
-.v-leave-to {
+.v-enter {
   opacity: 0;
   transform: translateY(30px);
 }

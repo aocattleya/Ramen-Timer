@@ -18,9 +18,6 @@ const vm = new Vue({
       this.isLeft = false;
       this.isRight = true;
     },
-    reload: function(event) {
-      window.location.reload();
-    },
     threeMin: function() {
       this.pickTime = 3 * 60;
       this.totalTime = this.pickTime;

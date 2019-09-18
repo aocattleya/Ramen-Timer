@@ -52,7 +52,7 @@
               class="reset-button" @click="resetTimer" v-if="resetButton"
             />
           </div>
-          <a v-on:click="reload" class="back-button">BACK</a>
+          <a @click="show = !show; stopTimer()" class="back-button">BACK</a>
         </div>
       </transition>
     </div>
