@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="img/kurin.jpg" />
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet" />
-    <title>RamenTimer</title>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&text=1234567890BACK:" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <title>RamenTimer</title>
+    <script>
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('/serviceworker.js').then(function(){
+          console.log("Service Worker Registered");
+        });
+      }
+    </script>  
   </head>
 
   <body>
@@ -52,7 +60,7 @@
               class="reset-button" @click="resetTimer" v-if="resetButton"
             />
           </div>
-          <a v-on:click="reload" class="back-button">BACK</a>
+          <a @click="show = !show; stopTimer()" class="back-button">BACK</a>
         </div>
       </transition>
     </div>
