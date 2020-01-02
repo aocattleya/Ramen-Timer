@@ -46,7 +46,7 @@
 
 ---
 
-<h3 align="center">- CSS Animasion -</h3>
+<h3 align="center">- Timer -</h3>
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/39142850/69484904-e2f9a800-0e7b-11ea-9f43-36e13a29df47.gif" width=70%>
