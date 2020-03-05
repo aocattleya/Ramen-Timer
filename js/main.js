@@ -59,10 +59,11 @@ const vm = new Vue({
   },
   computed: {
     minutes: function() {
+      const minites = this.totalTime / 60 / 1000;
       if (this.seconds == "00") {
-        return Math.ceil(this.totalTime / 60 / 1000);
+        return Math.ceil(minites);
       } else {
-        return Math.floor(this.totalTime / 60 / 1000);
+        return Math.floor(minites);
       }
     },
     seconds: function() {
