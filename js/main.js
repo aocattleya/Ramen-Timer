@@ -60,7 +60,7 @@ const vm = new Vue({
   computed: {
     minutes: function() {
       const minutes = this.totalTime / 60 / 1000;
-      if (this.seconds == "00") {
+      if (this.seconds === "00") {
         return Math.ceil(minutes);
       } else {
         return Math.floor(minutes);
