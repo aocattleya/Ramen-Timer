@@ -7,7 +7,6 @@ const vm = new Vue({
     timer: null,
     pickTime: null,
     totalTime: null,
-    resolution: null,
     resetButton: false
   },
   methods: {
@@ -20,17 +19,15 @@ const vm = new Vue({
       this.isRight = true;
     },
     threeMin: function() {
-      this.pickTime = 3 * 60 * 1000;
+      this.pickTime = 3 * 60;
       this.totalTime = this.pickTime;
-      this.resolution = 100;
     },
     fiveMin: function() {
-      this.pickTime = 5 * 60 * 1000;
+      this.pickTime = 5 * 60;
       this.totalTime = this.pickTime;
-      this.resolution = 100;
     },
     startTimer: function() {
-      this.timer = setInterval(() => this.countdown(), this.resolution);
+      this.timer = setInterval(() => this.countdown(), 1000);
       this.resetButton = true;
     },
     stopTimer: function() {
@@ -49,7 +46,7 @@ const vm = new Vue({
     },
     countdown: function() {
       if (this.totalTime >= 1) {
-        this.totalTime = this.totalTime - this.resolution;
+        this.totalTime--;
       } else {
         this.totalTime = 0;
         this.resetTimer();
