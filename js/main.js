@@ -56,11 +56,15 @@ const vm = new Vue({
   },
   computed: {
     minutes: function() {
-      const minutes = Math.floor(this.totalTime / 60);
-      return minutes;
+      const minutes = this.totalTime / 60 / 1000;
+      if (this.seconds === "00") {
+        return Math.ceil(minutes);
+      } else {
+        return Math.floor(minutes);
+      }
     },
     seconds: function() {
-      const seconds = this.totalTime - this.minutes * 60;
+      const seconds = Math.ceil(this.totalTime / 1000) % 60;
       return this.padTime(seconds);
     }
   }
