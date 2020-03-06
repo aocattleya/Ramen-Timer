@@ -10,7 +10,7 @@
     <title>RamenTimer</title>
     <script>
       if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('/serviceworker.js').then(function(){
+        navigator.serviceWorker.register('./serviceworker.js').then(function(){
           console.log("Service Worker Registered");
         });
       }
