@@ -17,7 +17,7 @@
 
 ## 🌐 App URL
 
-### **https://cupramen-timer.firebaseapp.com**  
+### **https://ramen-timer.com/**  
 　
 ## 💬 Usage
 
