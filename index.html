@@ -2,41 +2,60 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="img/kurin.jpg" />
-    <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&text=1234567890BACK:" rel="stylesheet" />
+    <meta name="viewport"           content="width=device-width, initial-scale=1.0" />
+    <meta name="description"        content="3分と5分でタイマーが測れるWebラーメンタイマー" />
+    <meta name="twitter:card"       content="summary_large_image" />
+    <meta name="twitter:creator"    content="@aocattleya" />
+    <meta property="og:title"       content="ラーメンタイマー" />
+    <meta property="og:description" content="3分と5分でタイマーが測れるWebラーメンタイマー" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://ramen-timer.com" />
+    <meta property="og:image"       content="https://ramen-timer.com/img/ramen-timer.png" />
+    <title>ラーメンタイマー</title>
     <link rel="stylesheet" href="css/style.css" />
-    <title>RamenTimer</title>
+    <link rel="icon" type="image/png" href="img/kurin.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&text=1234567890BACK:" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
     <script>
-      if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('./serviceworker.js').then(function(){
-          console.log("Service Worker Registered");
-        });
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("./serviceworker.js")
+          .then(function () {
+            console.log("Service Worker Registered");
+          });
       }
-    </script>  
+    </script>
   </head>
 
   <body>
     <div id="app" v-cloak>
-      <div v-show="!show">
+      <div class="content" v-show="!show">
         <!-- Character Icon -->
-        <img v-bind:class="{ right_face: isRight, left_face: isLeft }" />
+        <img
+          v-show="isRight" class="right_face"
+          src="/img/button_right.png" alt="くりんちゃん"
+        />
+        <img
+          v-show="isLeft" class="left_face"
+          src="/img/button_left.png" alt="くりんちゃん"
+        />
         <!-- Pick TimeButton -->
         <div class="pick-button">
           <input
-            type="image" class="left_timer" src="img/3min.svg"
             @click="show = !show; threeMin()" v-on:mouseover="rotate_left"
+            class="left_timer" type="image"
+            src="img/3min.svg" alt="3min_timer"
           />
           <input
-            type="image" class="right_timer" src="img/5min.svg"
             @click="show = !show; fiveMin()" v-on:mouseover="rotate_right"
+            class="right_timer" type="image"
+            src="img/5min.svg" alt="5min_timer"
           />
         </div>
       </div>
 
-      <transition appear>
-        <div v-show="show">
+      <transition appear v-cloak>
+        <div class="timer_container" v-show="show">
           <!-- Timer -->
           <div class="timer">
             <span id="minutes">{{ minutes }}</span>
@@ -46,18 +65,21 @@
           <div id="buttons">
             <!-- Start Button -->
             <input
-              type="image" src="img/start.svg"
-              class="start-button" @click="startTimer" v-if="!timer"
+              @click="startTimer" v-if="!timer"
+              class="start-button" type="image"
+              src="img/start.svg" alt="start-timer"
             />
             <!-- Stop Button -->
             <input
-              type="image" src="img/stop.svg"
-              class="stop-button" @click="stopTimer" v-if="timer"
+              @click="stopTimer" v-if="timer"
+              class="stop-button" type="image"
+              src="img/stop.svg" alt="stop-timer"
             />
             <!-- Reset Button -->
             <input
-              type="image" src="img/reset.svg"
-              class="reset-button" @click="resetTimer" v-if="resetButton"
+              @click="resetTimer" v-if="resetButton"
+              class="reset-button" type="image"
+              src="img/reset.svg" alt="reset-timer"
             />
           </div>
           <a @click="show = !show; stopTimer()" class="back-button">BACK</a>
