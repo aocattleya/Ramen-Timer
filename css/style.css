@@ -4,6 +4,19 @@ body {
   text-align: center;
 }
 
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.timer_container {
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
 .v-enter-active {
   transition: opacity 0.8s, transform 0.7s;
 }
@@ -20,11 +33,9 @@ body {
 .right_face {
   display: block;
   background-size: cover;
-  background-image: url(../img/button_right.png);
-  padding: 200px;
-  margin: 50px auto 10px;
+  margin: 0px auto 10px;
   border-radius: 50%;
-  border: 5px solid rgb(100, 100, 100);
+  border: 5px solid #646464;
   animation: anime1 0.4s linear 2;
 }
 @keyframes anime1 {
@@ -36,11 +47,9 @@ body {
 .left_face {
   display: block;
   background-size: cover;
-  padding: 200px;
-  margin: 50px auto 10px;
+  margin: 0px auto 10px;
   border-radius: 50%;
-  border: 5px solid rgb(100, 100, 100);
-  background-image: url(../img/button_left.png);
+  border: 5px solid #646464;
   animation: anime2 0.4s linear 2;
 }
 @keyframes anime2 {
@@ -103,11 +112,11 @@ body {
 .timer {
   display: inline-block;
   font-family: "Kosugi Maru", Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
+  color: #fff;
   background-color: #000;
   font-size: 85px;
   width: 85%;
-  margin: 220px auto 35px auto;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -182,22 +191,21 @@ body {
   cursor: pointer;
   text-decoration: none;
 }
-
 @media only screen and (max-width: 540px) {
   .timer {
     font-size: 50px;
   }
   .right_face {
-    padding: 140px;
+    width: 90%;
   }
   .left_face {
-    padding: 140px;
+    width: 90%;
   }
   .right_timer {
-    width: 130px;
+    width: 40%;
   }
   .left_timer {
-    width: 130px;
+    width: 40%;
     margin-right: 15px;
   }
 }
