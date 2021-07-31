@@ -42,7 +42,7 @@
 <h3 align="center">- CSS Animation -</h3>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/39142850/69484901-e0974e00-0e7b-11ea-8fac-a97589df5259.gif" width=70%>
+  <img src="https://user-images.githubusercontent.com/39142850/127751007-ae0dcc00-8b1d-4560-9e53-0af9b43322fb.png" width=70%>
 </p>
 
 ---
@@ -50,7 +50,7 @@
 <h3 align="center">- Timer -</h3>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/39142850/69484904-e2f9a800-0e7b-11ea-9f43-36e13a29df47.gif" width=70%>
+  <img src="https://user-images.githubusercontent.com/39142850/127751013-c0c6f28c-87ae-4d88-a1a7-b8b44325273b.png" width=70%>
 </p>
 
 ---
